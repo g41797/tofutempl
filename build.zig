@@ -15,7 +15,7 @@ pub fn build(b: *std.Build) void {
     // set a preferred release mode, allowing the user to decide how to optimize.
     const optimize = b.standardOptimizeOption(.{});
 
-    const tofu = b.dependency("tofu", .{
+    const tofu: *build.Dependency = b.dependency("tofu", .{
         .target = target,
         .optimize = optimize,
     });

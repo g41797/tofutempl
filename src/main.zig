@@ -57,7 +57,7 @@ pub const Configurator = configurator.Configurator;
 
 pub fn main() !void {
 
-    var dbalctr = std.heap.GeneralPurposeAllocator(.{}).init;
+    var dbalctr = std.heap.DebugAllocator(.{}).init;
     defer {
         const deinit_status = dbalctr.deinit();
         // fail test; can't try in defer as defer is executed after we return
@@ -66,7 +66,7 @@ pub fn main() !void {
         }
     }
 
-    const gpa = dbalctr.allocator();
+    const gpa: Allocator = dbalctr.allocator();
 
     _ = try lib.callTofuHelpers(gpa, "main");
 }
