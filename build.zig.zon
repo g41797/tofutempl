@@ -7,12 +7,12 @@
 
     .fingerprint = 0xda9a9c05b5c04f5d,
 
-    .minimum_zig_version = "0.14.1",
+    .minimum_zig_version = "0.15.2",
 
     .dependencies = .{
         .tofu = .{
-            .url = "git+https://github.com/g41797/tofu#1c82098d9c2f468d563f3bbcebc13a5a1e641322",
-            .hash = "tofu-0.0.0-vHqBNW1qAwAFEoDh9PhuqUn1x1jW8UPI8yIp_CD9CKTU",
+            .url = "git+https://github.com/g41797/tofu#0a3ea201be2050e43a8875f99c0c2635631e84f9",
+            .hash = "tofu-0.0.0-W094V8F3AwAJLueIlLQdq67W1GfMybR_rJMRyfyITf7H",
         },
     },
     .paths = .{

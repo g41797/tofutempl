@@ -55,13 +55,13 @@ pub const Configurator = configurator.Configurator;
 pub fn callTofuHelpers(allocator: Allocator, txt: []const u8) !void {
     std.testing.log_level = .debug;
 
-    const port = try tofu.FindFreeTcpPort();
+    const port: u16 = try tofu.FindFreeTcpPort();
 
     log.debug("{s} free TCP/IP port {d}", .{ txt, port });
 
     var tup: tofu.TempUdsPath = .{};
 
-    const filePath = try tup.buildPath(allocator);
+    const filePath: []u8 = try tup.buildPath(allocator);
 
     log.debug("{s} UDS path {s}", .{ txt, filePath });
 

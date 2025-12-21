@@ -56,8 +56,7 @@ pub const configurator = tofu.configurator;
 pub const Configurator = configurator.Configurator;
 
 pub fn main() !void {
-
-    var dbalctr = std.heap.DebugAllocator(.{}).init;
+    var dbalctr: std.heap.DebugAllocator(.{}) = std.heap.DebugAllocator(.{}).init;
     defer {
         const deinit_status = dbalctr.deinit();
         // fail test; can't try in defer as defer is executed after we return

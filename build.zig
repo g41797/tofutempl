@@ -15,7 +15,7 @@ pub fn build(b: *std.Build) void {
     // set a preferred release mode, allowing the user to decide how to optimize.
     const optimize = b.standardOptimizeOption(.{});
 
-    const tofu: *build.Dependency = b.dependency("tofu", .{
+    const tofu: *std.Build.Dependency = b.dependency("tofu", .{
         .target = target,
         .optimize = optimize,
     });
@@ -111,7 +111,6 @@ pub fn build(b: *std.Build) void {
     });
 
     b.installArtifact(lib_unit_tests); // <== Added g41797 - for debugging of tests
-
 
     const run_lib_unit_tests = b.addRunArtifact(lib_unit_tests);
 
